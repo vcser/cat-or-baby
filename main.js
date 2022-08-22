@@ -9,8 +9,12 @@ let audio = new Audio();
 window.addEventListener("load", () => {
     console.log("cargado");
     new_round();
-    audio.autoplay = true;
 }, false);
+
+document.onmousemove = () => {
+    audio.play();
+    document.onmousemove = null;
+}
 
 cat_button.onclick = () => {
     console.log("cat!");
