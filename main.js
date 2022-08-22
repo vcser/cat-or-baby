@@ -11,7 +11,7 @@ window.addEventListener("load", () => {
     new_round();
 }, false);
 
-document.onmousemove = () => {
+document.onmouseenter = () => {
     audio.play();
     document.onmousemove = null;
 }
