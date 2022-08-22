@@ -9,11 +9,7 @@ audio.src = "sounds/cat.wav";
 
 window.addEventListener("load", () => {
     console.log("cargado");
-    // new_round();
-    document.body.onmousemove = () => {
-        audio.play();
-        document.body.onmousemove = null;
-    }
+    new_round();
 }, false);
 
 cat_button.onclick = () => {
