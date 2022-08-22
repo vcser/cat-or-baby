@@ -11,9 +11,9 @@ window.addEventListener("load", () => {
     new_round();
 }, false);
 
-document.onmouseenter = () => {
+document.body.onmousemove = () => {
     audio.play();
-    document.onmousemove = null;
+    document.body.onmousemove = null;
 }
 
 cat_button.onclick = () => {
