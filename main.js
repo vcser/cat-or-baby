@@ -5,16 +5,16 @@ const cat_button = document.getElementById("cat-button");
 const baby_button = document.getElementById("baby-button");
 const replay_button = document.getElementById("replay");
 let audio = new Audio();
+audio.src = "sounds/cat.wav";
 
 window.addEventListener("load", () => {
     console.log("cargado");
-    new_round();
+    // new_round();
+    document.body.onmousemove = () => {
+        audio.play();
+        document.body.onmousemove = null;
+    }
 }, false);
-
-document.body.onmousemove = () => {
-    audio.play();
-    document.body.onmousemove = null;
-}
 
 cat_button.onclick = () => {
     console.log("cat!");
