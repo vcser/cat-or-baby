@@ -9,6 +9,7 @@ let audio = new Audio();
 window.addEventListener("load", () => {
     console.log("cargado");
     new_round();
+    audio.autoplay = true;
 }, false);
 
 cat_button.onclick = () => {
