@@ -6,10 +6,10 @@ const baby_button = document.getElementById("baby-button");
 const replay_button = document.getElementById("replay");
 let audio = new Audio();
 
-window.onload = () => {
+window.addEventListener("load", () => {
     console.log("cargado");
     new_round();
-}
+}, false);
 
 cat_button.onclick = () => {
     console.log("cat!");
