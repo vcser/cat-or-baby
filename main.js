@@ -6,13 +6,16 @@ const baby_button = document.getElementById("baby-button");
 const replay_button = document.getElementById("replay");
 const score_text = document.getElementById("score");
 const result_text = document.getElementById("result");
-let audio = new Audio();
+const start_game = document.getElementById("start-game");
+const main = document.getElementById("main");
+const audio = new Audio();
 audio.src = "sounds/cat.wav";
 
-window.addEventListener("load", () => {
-    console.log("cargado");
+start_game.onclick = () => {
+    main.style.display = '';
+    start_game.style.display = 'none';
     new_round();
-}, false);
+}
 
 cat_button.onclick = () => {
     console.log("cat!");
@@ -28,19 +31,19 @@ replay_button.onclick = () => {
     audio.play();
 }
 
-let new_round = () => {
+const new_round = () => {
     let rnd = Math.floor(Math.random() * 100) % 2;
     if (rnd == 1) {
-        audio.src = "sounds/cat.wav";
+        audio.src = "sounds/cat/" + (Math.floor(Math.random() * 2) + 1) + ".wav";
         correct_answer = "cat";
     } else {
-        audio.src = "sounds/baby.wav";
+        audio.src = "sounds/baby/" + (Math.floor(Math.random() * 2) + 1) + ".wav";
         correct_answer = "baby";
     }
     audio.play();
 };
 
-let choose = (selection) => {
+const choose = (selection) => {
     if (selection == correct_answer) {
         score++;
         result_text.innerText = "Correct!";
@@ -54,7 +57,7 @@ let choose = (selection) => {
     new_round();
 }
 
-let change_result_color = () => {
+const change_result_color = () => {
     const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
     result_text.style.color = randomColor;
 };
