@@ -34,10 +34,10 @@ replay_button.onclick = () => {
 const new_round = () => {
     let rnd = Math.floor(Math.random() * 100) % 2;
     if (rnd == 1) {
-        audio.src = "sounds/cat/" + (Math.floor(Math.random() * 3) + 1) + ".wav";
+        audio.src = "sounds/cat/" + Math.floor(Math.random() * 4) + ".wav";
         correct_answer = "cat";
     } else {
-        audio.src = "sounds/baby/" + (Math.floor(Math.random() * 3) + 1) + ".wav";
+        audio.src = "sounds/baby/" + Math.floor(Math.random() * 4) + ".wav";
         correct_answer = "baby";
     }
     audio.play();
